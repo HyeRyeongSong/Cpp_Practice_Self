@@ -1,4 +1,4 @@
-# Install script for directory: /Users/hyeryeongsong/CLionProjects/PracticeCode
+# Install script for directory: /Users/hyeryeongsong/cpp_Practice_Self/PracticeCode
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -35,5 +35,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/hyeryeongsong/CLionProjects/PracticeCode/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/hyeryeongsong/cpp_Practice_Self/PracticeCode/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
