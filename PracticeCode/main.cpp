@@ -2,21 +2,21 @@
 
 using namespace std;
 
-template <typename T>
-
-inline T test(T name)
+int SimpleFunc(int a = 10)
 {
-    cout << name <<endl;
+    cout << "int" << endl;
+    return a+1;
 }
 
-int iValue = 3;
+int SimpleFunc(void)
+{
+    cout << "void" << endl;
+    return 10;
+}
+
 
 int main()
 {
-    int iValue = 5;
-    char* cName = new(char);
-    strcpy(cName, "hyeryung");
-    test(cName);
-    cout << "전역변수: " << ::iValue << endl << "지역변수: " << iValue << endl;
+    SimpleFunc();
     return 0;
 }
