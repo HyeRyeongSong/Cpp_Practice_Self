@@ -3,49 +3,57 @@
 
 using namespace std;
 
-class First
+class Point
 {
- //   void FirstFunc()
-   // {
-     //   cout << "first func" <<endl;
-    //}
+private:
+    int xpos, ypos;
 public:
-    virtual int SimpleFunc() = 0;
+    Point(int x=0, int y=0) : xpos(x), ypos(y)
+    {}
+    void ShowPosition() const
+    {
+        cout<<'[' <<xpos<<", "<<ypos<<']'<<endl;
+    }
+    friend Point operator+(const Point &pos1, const Point &pos2);
+
+    Point& operator+=(const Point &pos)
+    {
+        this->xpos+=pos.xpos;
+        this->ypos+=pos.ypos;
+        return *this;
+    }
+
+    Point& operator-=(const Point &pos)
+    {
+        this->xpos-=pos.xpos;
+        this->ypos-=pos.ypos;
+        return *this;
+    }
 };
 
-class Second : public First
+Point operator+(const Point &pos1, const Point &pos2)
 {
-public:
-    void SecondFunc()
-    {
-        cout << "second func" << endl;
-    }
-    int SimpleFunc()
-    {
-        cout << "second SimpleFunc()" <<endl;
-    }
-};
-
-class Third : public Second
-{
-public:
-    void ThirdFunc()
-    {
-        cout << "third func" << endl;
-    }
-    int SimpleFunc()
-    {
-        cout <<"third SimpleFunc()" <<endl;
-    }
-};
+    Point pos;
+    pos.xpos = pos1.xpos + pos2.xpos;
+    pos.ypos = pos1.ypos + pos2.ypos;
+    return pos;
+}
 
 int main() {
-    Third third;
-    third.ThirdFunc();
-    third.SimpleFunc();
-    Second& second = third;
-    second.SecondFunc();
-    second.SimpleFunc();
+    Point pos1(1, 1);
+    Point pos2(2, 2);
+    Point pos3;
+    pos1.ShowPosition();
+    pos2.ShowPosition();
+    operator+(pos1, pos2);
+    pos1.operator+=(pos2);
+    pos1.ShowPosition();
+    pos2.ShowPosition();
+    pos2.operator-=(pos1);
+    pos1.ShowPosition();
+    pos2.ShowPosition();
+
+
 
     return 0;
 }
