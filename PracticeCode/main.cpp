@@ -2,21 +2,20 @@
 
 using namespace std;
 
-int SimpleFunc(int a = 10)
+void func(const int& iNum)
 {
-    cout << "int" << endl;
-    return a+1;
+    cout << iNum <<endl;
 }
 
-int SimpleFunc(void)
+void func2(int& iNum)
 {
-    cout << "void" << endl;
-    return 10;
+    cout << iNum <<endl;
 }
 
 
 int main()
 {
-    SimpleFunc();
+    func(1);
+    func2(2);
     return 0;
 }
