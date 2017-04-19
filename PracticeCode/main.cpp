@@ -54,6 +54,18 @@ public:
         strcpy(this->cPhoneNum, cPhoneNum);
     }
 
+    /*explicit*/ NameCard(const NameCard& copy) //묵시적 형 변환 막아주는 키워드
+                                                //명시적 호출만 인정하겠다
+    :iPosition(copy.iPosition)
+    {
+        this->cCompanyName = new char[strlen(copy.cCompanyName) + 1];
+        this ->cName = new char[strlen(copy.cName) + 1];
+        this->cPhoneNum = new char[strlen(copy.cPhoneNum) + 1];
+        strcpy(this->cName, copy.cName);
+        strcpy(this->cCompanyName, copy.cCompanyName);
+        strcpy(this->cPhoneNum,  copy.cPhoneNum);
+    }
+
     void ShowNameCardInfo()
     {
         cout << "이름: " << this->cName <<endl;
@@ -76,5 +88,10 @@ int main()
 {
     NameCard manClerk("Lee", "ABCENG", "010-1111-2222", COMP_POS::CLERK);
     manClerk.ShowNameCardInfo();
+    NameCard man2(manClerk);
+    NameCard man3 = manClerk;
+    man2.ShowNameCardInfo();
+    const NameCard& tmp=NameCard("Lee", "ABCENG", "010-1111-2222", COMP_POS::CLERK);
+    NameCard("Lee", "ABCENG", "010-1111-2222", COMP_POS::CLERK).ShowNameCardInfo();
     return 0;
 }
