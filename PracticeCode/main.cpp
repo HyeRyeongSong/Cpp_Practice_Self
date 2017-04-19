@@ -3,62 +3,49 @@
 
 using namespace std;
 
-class MyFriendInfo
+class First
 {
-private:
-    char * name;
-    int age;
+ //   void FirstFunc()
+   // {
+     //   cout << "first func" <<endl;
+    //}
 public:
-    MyFriendInfo(char* name, int age)
-    :age(age)
+    virtual int SimpleFunc() = 0;
+};
+
+class Second : public First
+{
+public:
+    void SecondFunc()
     {
-        this ->name = new char[strlen(name)+1];
-        strcpy(this->name, name);
+        cout << "second func" << endl;
     }
-    void ShowMyFriendInfo()
+    int SimpleFunc()
     {
-        cout << "이름: " <<name<<endl;
-        cout << "나이: " <<age<<endl;
-    }
-    ~MyFriendInfo()
-    {
-        delete[] name;
+        cout << "second SimpleFunc()" <<endl;
     }
 };
 
-class MyFriendDetailInfo : public MyFriendInfo
+class Third : public Second
 {
-private:
-    char* addr;
-    char* phone;
 public:
-    MyFriendDetailInfo(char* name, int age, char* addr, char* phone)
-    :MyFriendInfo(name, age)
+    void ThirdFunc()
     {
-        this->addr = new char[strlen(addr)+1];
-        this->phone = new char[strlen(phone)+1];
-        strcpy(this->addr, addr);
-        strcpy(this->phone, phone);
+        cout << "third func" << endl;
     }
-    void ShowMyFriendDetailInfo()
+    int SimpleFunc()
     {
-        ShowMyFriendInfo();
-        cout << "주소: " <<addr<<endl;
-        cout << "전화: " <<phone<<endl;
-    }
-    ~MyFriendDetailInfo()
-    {
-        delete[] addr;
-        delete[] phone;
+        cout <<"third SimpleFunc()" <<endl;
     }
 };
 
-int main()
-{
-    MyFriendDetailInfo MFD("hyeryung", 22, "hanti", "010-1111-1111");
-    MFD.ShowMyFriendDetailInfo();
-    cout << endl;
-    MFD.ShowMyFriendInfo();
+int main() {
+    Third third;
+    third.ThirdFunc();
+    third.SimpleFunc();
+    Second& second = third;
+    second.SecondFunc();
+    second.SimpleFunc();
 
     return 0;
 }
