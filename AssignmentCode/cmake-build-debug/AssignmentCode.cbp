@@ -80,9 +80,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/hyeryeongsong/cpp_Practice_Self/AssignmentCode/main.cpp">
-			<Option target="AssignmentCode"/>
-		</Unit>
 		<Unit filename="/Users/hyeryeongsong/cpp_Practice_Self/AssignmentCode/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

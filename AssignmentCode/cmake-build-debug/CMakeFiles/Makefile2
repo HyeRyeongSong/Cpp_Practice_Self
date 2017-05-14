@@ -66,7 +66,7 @@ CMAKE_BINARY_DIR = /Users/hyeryeongsong/cpp_Practice_Self/AssignmentCode/cmake-b
 CMakeFiles/AssignmentCode.dir/all:
 	$(MAKE) -f CMakeFiles/AssignmentCode.dir/build.make CMakeFiles/AssignmentCode.dir/depend
 	$(MAKE) -f CMakeFiles/AssignmentCode.dir/build.make CMakeFiles/AssignmentCode.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/hyeryeongsong/cpp_Practice_Self/AssignmentCode/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target AssignmentCode"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/hyeryeongsong/cpp_Practice_Self/AssignmentCode/cmake-build-debug/CMakeFiles --progress-num= "Built target AssignmentCode"
 .PHONY : CMakeFiles/AssignmentCode.dir/all
 
 # Include target in all.
@@ -76,7 +76,7 @@ all: CMakeFiles/AssignmentCode.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/AssignmentCode.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/hyeryeongsong/cpp_Practice_Self/AssignmentCode/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/hyeryeongsong/cpp_Practice_Self/AssignmentCode/cmake-build-debug/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/AssignmentCode.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/hyeryeongsong/cpp_Practice_Self/AssignmentCode/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/AssignmentCode.dir/rule

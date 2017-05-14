@@ -2,41 +2,33 @@
 
 using namespace std;
 
-class Point
+void insertsort(int* arr , int size)
 {
-private:
-    int xpos, ypos;
-
-public:
-    Point(int x=0, int y=0) : xpos(x), ypos(y)
-    {}
-    friend ostream& operator<<(ostream&, const Point&);
-    friend istream& operator>>(istream&, Point&);
-};
-
-
-/*istream& operator>>(istream& is, Point pos)
-{
-    is>>pos.xpos>>pos.ypos;
-    return is;
-}*/
-
-ostream& operator<< (ostream& os, Point pos)
-{
-    os<<'[' <<pos.xpos<<", "<<pos.ypos<<']'<<endl;
-    return os;
+    int i, j, a, k;
+    for(i=0; i<size; i++)
+    {
+        a=i;
+        for(j=i+1;i<size;j++)
+        {
+            if(arr[j] < arr[a])
+                a=j;
+        }
+        swap(arr[i], arr[a]);
+        for(int b=0; b<size;b++)
+            cout<<arr[b]<<" ";
+        cout << endl;
+    }
 }
 
-int main()
+void swap(int& iNum1, int& iNum2)
 {
-    Point pos1;
-    cout<<"x, y 좌표 순으로 입력: ";
-   // cin >> pos1;
-    cout<< pos1;
+    int iTmp = iNum1;
+    iNum1 = iNum2;
+    iNum2 = iTmp;
+}
 
-    Point pos2;
-    cout<<"x, y 좌표 순으로 입력: ";
-    //cin >> pos2;
-    cout << pos2;
-    return 0;
+int main(void) {
+    int arr[5] = {9,4,3,7,2};
+    insertsort(arr, 5);
+    return  0;
 }
