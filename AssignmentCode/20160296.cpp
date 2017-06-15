@@ -184,7 +184,7 @@ public:
         {return current != right.current;}
         bool operator==(const ChainIterator right) const
         {return current == right.current;}
-        
+
     private:
         ChainNode<T>* current;
     };
